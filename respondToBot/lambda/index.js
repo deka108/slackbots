@@ -1,9 +1,3 @@
-/**
- * Responds to any HTTP request.
- *
- * @param {!express:Request} req HTTP request context.
- * @param {!express:Response} res HTTP response context.
- */
 const { WebClient } = require('@slack/client');
 
 const randomMessages = [
@@ -16,7 +10,13 @@ const randomMessages = [
 
 const web = new WebClient(process.env.SLACK_ACCESS_TOKEN);
 
-exports.imelTobat = (request, response) => {
+/**
+ * Responds to any HTTP request.
+ *
+ * @param {!express:Request} request HTTP request context.
+ * @param {!express:Response} response HTTP response context.
+ */
+exports.respondToBot = (request, response) => {
   const { event } = request.body;
   if (!!event){
     const { bot_id, channel } = event;
