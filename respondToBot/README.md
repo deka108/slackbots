@@ -23,9 +23,9 @@ Triggers the slackbot to sned a random message when detecting another bot user's
 | `message.im` | A message was posted in a direct message channel |
 | `message.mpim` | A message was posted in a multiparty direct message channel |
 
-### Credentials
+### Configurations and Credentials
 
-See the required environment variables and credentials in `.env-template`
+We're using `dotenv`, to do this, you need to copy `.env-template` to `.env` and fill-in all the required parameters with their actual values.
 
 ```.env
 SLACK_BOT_ID=
