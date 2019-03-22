@@ -10,11 +10,11 @@ const token = process.env.SLACK_BOT_TOKEN;
 const port = process.env.PORT || 3000;
 
 const randomMessages = [
-    "It does not matter how slowly you go as long as you do not stop - Confucius",
-    "It always seems impossible until it's done - Nelson Mandela",
-    "A will finds a way - Orison Swett Marden",
-    "If you can dream it, you can do it - Walt Disney",
-    "Without hard work, nothing grows but weeds - Gordon B. Hinckley"
+  "It does not matter how slowly you go as long as you do not stop - Confucius",
+  "It always seems impossible until it's done - Nelson Mandela",
+  "A will finds a way - Orison Swett Marden",
+  "If you can dream it, you can do it - Walt Disney",
+  "Without hard work, nothing grows but weeds - Gordon B. Hinckley"
 ]
 
 const web = new WebClient(token);
@@ -27,17 +27,17 @@ slackEvents.on('message', (event) => {
   const { bot_id, channel } = event;
   if (!!bot_id){
       if (bot_id === process.env.SLACK_BOT_ID){
-          console.log("respondToCommand - we detect the slackbot message!");
+          console.log("respondToBot - we detect the slackbot message!");
           let randomMessage = randomMessages[Math.floor(Math.random()*randomMessages.length)];
 
           if(!!channel){
-            console.log(`respondToCommand - sending "${randomMessage}" to channel ${channel}...`);
+            console.log(`respondToBot - sending "${randomMessage}" to channel ${channel}...`);
             (async () => {
                 // See: https://api.slack.com/methods/chat.postMessage
                 const res = await web.chat.postMessage({ channel: channel, text: randomMessage });
               
                 // `res` contains information about the posted message
-                console.log(`respondToCommand - Message sent: ${res.ts}`);
+                console.log(`respondToBot - Message sent: ${res.ts}`);
               })();
           }
       }

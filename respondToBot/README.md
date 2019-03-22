@@ -1,6 +1,6 @@
-# respondToBotCommand
+# respondToBot Slackbot
 
-Trigger bot to sned a random message when detecting another bot user's message sending activities.
+Triggers the slackbot to sned a random message when detecting another bot user's message sending activities.
 
 ## Prerequisites
 
