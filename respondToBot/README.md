@@ -25,10 +25,12 @@ Triggers the slackbot to sned a random message when detecting another bot user's
 
 ### Configurations and Credentials
 
-We're using `dotenv`, to do this, you need to copy `.env-template` to `.env` and fill-in all the required parameters with their actual values.
+We're using `dotenv`. To make this dotenv working, you need to copy `.env-template` to `.env` and fill-in all the required parameters with their actual values.
 
 ```.env
 SLACK_BOT_ID=
 SLACK_BOT_TOKEN=
 SLACK_SIGNING_SECRET=
 ```
+
+If you're successful, you'll able to access the above environment varibables from your node.js application using `process.env.[ENVIRONMENT_VARIABLE_NAME]`
