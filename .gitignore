@@ -1,0 +1,19 @@
+# Node.js
+node_modules
+
+# vscode
+.vscode
+
+# macos
+.DS_Store
+
+# Don't track the following files / directories
+.env
+secrets
+credentials
+
+test.*
+*.test
+test
+untracked
+tmp
